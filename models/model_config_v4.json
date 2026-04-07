@@ -94,15 +94,15 @@
   ],
   "llm_model": "claude-haiku-4-5-20251001",
   "best_params": {
-    "n_estimators": 850,
+    "n_estimators": 1000,
     "max_depth": 7,
-    "learning_rate": 0.045771173235577,
-    "num_leaves": 38,
-    "min_child_samples": 29,
-    "scale_pos_weight": 1.1108062822284372,
-    "reg_alpha": 0.13699954318308907,
-    "reg_lambda": 0.3366025181619312,
-    "subsample": 0.7987829061643874,
-    "colsample_bytree": 0.8965842972238778
+    "learning_rate": 0.09457913658323408,
+    "num_leaves": 35,
+    "min_child_samples": 17,
+    "scale_pos_weight": 2.284502889506601,
+    "reg_alpha": 0.002047153920939984,
+    "reg_lambda": 0.3029992351362672,
+    "subsample": 0.610099415197247,
+    "colsample_bytree": 0.9750084265892829
   }
 }

@@ -1,391 +1,447 @@
 claim_idx,prediction,actual,probability,claim_type,damage_type,customer_explanation,adjuster_explanation
-2232,Declined,Declined,0.034,Accidental Damage,multiple_damage,"Dear Valued Customer,
+2232,Declined,Declined,0.004,Accidental Damage,multiple_damage,"# Claim Decision: Unfortunately Declined
 
-Thank you for filing your claim with us. I understand how frustrating it must be to discover issues with your device. After carefully reviewing your claim for your WUAWEI smartphone, I'm writing to let you know that we've had to **decline your claim**.
+Dear Valued Customer,
 
-Here's why: The damage you've described—scratches on the screen, a declining fingerprint scanner, and charging issues—appears to be **gradual wear and tear** rather than damage from a sudden accident. Our accidental damage coverage is designed to protect against unexpected incidents like drops or spills, not the gradual deterioration that happens over time with normal use.
+Thank you for filing your claim for your WUAWEI smartphone. I understand how frustrating it is when your device starts showing issues, and I appreciate you providing those details.
+
+After careful review, **we've had to decline your claim**. Here's why:
+
+The damage you're describing—the screen scratches, declining fingerprint scanner performance, and charging difficulties—appears to be **gradual wear and tear** rather than damage from a sudden accident. Our Accidental Damage coverage specifically protects against unexpected incidents (like dropping your phone), not damage that develops over time with normal use.
 
 **What you can do:**
 
-- If you believe this damage was caused by a specific incident (like a drop or impact) that you haven't mentioned, please reply with those details, and we'll be happy to reconsider
-- You may also request a formal appeal if you'd like us to review the decision again
-- If you'd like to discuss your coverage options going forward, our team is here to help
+1. **Appeal this decision** - If you believe this damage resulted from a specific accidental incident rather than gradual wear, please provide additional details and we'll reconsider
+2. **Contact us** - Our team can discuss other coverage options that might help with device repairs
+3. **Check your warranty** - Your device manufacturer's warranty may cover some of these issues
 
-I know this isn't the outcome you were hoping for, and I truly appreciate your patience. Please don't hesitate to reach out if you have any questions.
+I know this isn't the news you hoped for, and I'm sorry we couldn't help with this particular claim. If you'd like to discuss this further or explore your options, please don't hesitate to reach out—I'm here to help.
 
 Best regards,
-Customer Service Team","**CLAIMS ADJUSTER NOTE – INTERNAL ANALYSIS**
+**Your Insurance Team**","**CLAIMS ADJUSTER NOTE**
 
-**Claim ID:** WUAWEI-AAA145 | **Decision:** DECLINED | **Confidence:** 3.4%
+**Claim ID:** WUAWEI-AAA145 | **Decision:** DECLINED | **Confidence:** Very Low (0.4%)
 
 ---
 
-**PREDICTION SUMMARY**
-ML model declined claim with very low approval probability (0.034 vs. 0.40 threshold). However, the extremely low confidence score warrants cautious interpretation of this automated decision.
+**DECISION SUMMARY**
+ML model recommends decline with extremely low approval probability (0.004 vs. 0.40 threshold). However, confidence level is critically weak, indicating high uncertainty in this classification.
+
+---
 
 **SUPPORTING EVIDENCE FOR DECLINE**
-- **Gradual wear classification:** Multiple issues (screen scratches, fingerprint scanner degradation, charging malfunction) indicate progressive deterioration rather than acute accidental damage
-- **Incident type scoring:** Model classified as ""gradual_wear"" (SHAP: -2.77), the strongest negative indicator
-- **Policy alignment:** ADLD/THEFT coverage typically excludes wear-and-tear claims
-- **Device functionality:** Partial operational status suggests pre-existing vulnerability rather than isolated damage event
+- **Gradual wear classification (SHAP: -4.66):** Primary driver. Claimant reports progressive deterioration (fingerprint scanner degradation, charging intermittency, screen scratches)—consistent with wear rather than acute damage
+- **Device functionality:** Partial (not total loss), suggesting operational despite defects
+- **Incident clarity:** Moderate—no specific damage event described
+
+---
 
 **CONTRADICTING FACTORS & RISK FLAGS**
-- **Critically low confidence (3.4%):** Model certainty is below typical reliability threshold; high false-negative risk
-- **User fault assessment:** Model correctly identified user NOT at fault (SHAP: -0.43), yet still declined—inconsistent logic
-- **Policy timing:** Device purchased 304 days prior to claim (good faith indicator, SHAP: +0.53)
-- **Description brevity:** Short claim narrative (28 words) may have underrepresented incident context
-- **Vague causation:** Dutch-language description lacks specificity on damage timeline or triggering event
+- **Policy coverage mismatch:** ADLD/THEFT explicitly covers ""Accidental Damage."" Gradual wear typically excluded, but screen scratches may constitute covered accidental damage if distinct from wear
+- **Linguistic signal weakness:** Low uppercase ratio and modest word count (28 words) negatively weighted—potentially penalizing legitimate claims with brief, matter-of-fact descriptions
+- **Device age:** 304 days post-purchase; within typical wear manifestation period but doesn't automatically exclude coverage
+- **User fault assessment:** Model confidence that user is NOT at fault (value=0) supports claim legitimacy
+- **Claim value consideration:** RRP €1,579 with €59 excess—material claim warranting careful review
 
-**RECOMMENDATION**
-**ESCALATE FOR MANUAL REVIEW.** The 3.4% confidence combined with contradictory signals (no user fault + active policy + acceptable timing) suggests model uncertainty. Adjuster should:
-1. Request detailed incident timeline and damage progression photos
-2. Clarify whether issues originated from single event or accumulated use
-3. Verify coverage specifics under ADLD policy regarding component-level failures
+---
 
-**RRP £1,579 | Excess: £59**"
-356,Declined,Declined,0.055,Theft,theft,"# Claim Decision: Declined
+**MANUAL REVIEW RECOMMENDATION: YES**
 
-Dear Valued Customer,
-
-Thank you for filing a claim for your HUAWEI smartphone that was lost after your dinner outing on January 22nd. We understand how frustrating this situation must be.
-
-After carefully reviewing your claim, we're unable to approve it at this time. Here's why:
-
-**Main reasons for this decision:**
-- The circumstances of the theft couldn't be fully verified (it's unclear exactly where or when the phone disappeared)
-- The cost of replacing your device relative to your policy excess presents a coverage concern
-- We weren't able to complete a full assessment of the device's condition before it was lost
-
-**What you can do next:**
-
-If you believe we've made an error or if you have additional information that clarifies what happened—such as documentation from the restaurant or bus company, or a police report—please don't hesitate to contact us. We're happy to review your claim again with any new evidence.
-
-You also have the right to appeal this decision. Just let us know, and we'll walk you through that process.
-
-We genuinely want to help, and we're here if you'd like to discuss this further.
-
-Best regards,  
-**[Your Insurance Company] Customer Service Team**","**CLAIMS ADJUSTER NOTE – THEFT CLAIM ANALYSIS**
-
-**Decision Summary:**
-ML model recommends **DECLINE** with low confidence (5.5% approval probability vs. 40% threshold). This marginal prediction warrants careful manual review before final determination.
-
-**Supporting Evidence for Decline:**
-- **Excess-to-RRP ratio critically high** (1.84): Excess of SEK 1,989 exceeds device RRP of SEK 1,079 by 84%, creating negative claim value
-- **Vague incident narrative**: Claimant uncertain about loss location (restaurant vs. bus); lacks specificity typical of credible theft claims
-- **Incident classification concern**: ML flagged incident type coding as major decline factor (SHAP: -1.348)
-
-**Contradicting Factors:**
-- Policy active and theft coverage (ADLD/THEFT) valid in Sweden
-- Device confirmed non-functional post-loss
-- No evidence of user fault or gradual wear
-- Claimant tone assessed as matter-of-fact (not suspicious emotional patterns)
-
-**Critical Risk Flags:**
-1. **Excess exceeds claim value** – Primary economic issue; claim economically unviable regardless of validity
-2. **Narrative vagueness** – Uncertainty about loss circumstances (timing/location) suggests incomplete investigation or memory gaps
-3. **Low description quality** (31 words, 172 chars) – May indicate insufficient documentation rather than fraud
-
-**Recommendation:**
-**DECLINE** claim based on excess-to-RRP ratio making claim uneconomical. However, **request manual review** if:
-- Claimant can provide additional evidence clarifying loss circumstances
-- Policy terms permit excess waiver consideration
-- Subrogation recovery potential exists
-
-**Decision defensible on economic grounds alone, independent of ML confidence weighting.**"
-2270,Declined,Declined,0.067,Accidental Damage,software_issue,"# Claim Decision Letter
+The model's near-zero confidence (0.4%) combined with genuine coverage ambiguity (gradual wear vs. accidental damage distinction) warrants adjuster intervention. Screen scratches may be separately claimable despite wear components. Recommend:
+1. Clarify if scratches resulted from specific incident
+2. Assess whether fingerprint/charging issues predate policy
+3. Verify ADLD policy wording on wear exclusions"
+356,Declined,Declined,0.006,Theft,theft,"# Your Claim Decision
 
 Dear Valued Customer,
 
-Thank you for filing a claim with us. I understand how frustrating it is when your device stops working properly.
+Thank you for filing your claim for your HUAWEI smartphone that was stolen. I understand how frustrating this must be, and I appreciate you providing the details of what happened.
 
-**Your claim has been declined.**
+After careful review, we've made the difficult decision to **decline your claim**.
 
-After carefully reviewing your claim for your WUAWEI smartphone, we found that we're unable to approve coverage at this time. Here's why:
+Here's why:
 
-Your claim describes a software issue (the phone being stuck on the startup screen), and unfortunately, software problems typically aren't covered under accidental damage protection. Additionally, some details in your claim—such as the unclear cause of the incident and unclear damage description—made it difficult for us to fully assess what happened.
+Our assessment found that several factors didn't align with our coverage requirements:
+- The circumstances described in your claim (losing the phone after dinner, uncertainty about where it disappeared) raised questions about whether the loss meets our theft coverage criteria
+- The claim documentation provided didn't contain enough detail for us to fully verify the theft occurred as covered
+- The value versus repair cost ratio also factored into our decision
 
 **What you can do:**
 
-1. **Appeal** – You have the right to appeal this decision. If you believe we've made an error, please reply with any additional information about how the damage occurred.
-
-2. **Provide more details** – If you can clarify exactly what happened (for example, if there was physical damage that caused the software issue), please share that with us.
-
-3. **Contact support** – Our team is happy to discuss this further and answer any questions.
-
-We genuinely want to help where we can. Please don't hesitate to reach out.
-
-Best regards,  
-**Customer Service Team**","**CLAIMS ADJUSTER NOTE – DECLINE DECISION ANALYSIS**
-
-**Prediction Summary:**
-ML model declined claim with low approval probability (0.067 vs. 0.40 threshold). Decision confidence is moderate; decline recommendation supported by multiple risk indicators.
-
-**Key Evidence Supporting Decline:**
-
-- **Damage Classification:** AI assessed as software_issue (moderate severity), not accidental physical damage. Device showing BIOS/startup loop suggests potential manufacturing defect or gradual degradation rather than sudden impact event.
-- **Incident Clarity:** Vague incident description (redacted text, fragmented Dutch narrative) fails to establish clear causal link between alleged ""cabinet fall"" and current malfunction. User account lacks specificity on impact force/height.
-- **Model Contributing Factors:** Strongest decline signals include:
-  - llm_damage_type (SHAP: -1.76) – software issues typically excluded from ADLD
-  - llm_incident_type (SHAP: -1.58) – unknown cause incompatible with accidental damage proof requirement
-  - Low description clarity (uppercase ratio, word count) – insufficient evidence documentation
-
-**Risk Factors:**
-
-- Policy shows 9 prior device issues on record – pattern suggests potential chronic issues or repeated claims
-- Device RRP €499 with €45 excess – financial incentive present
-- Narrative quality and censoring make independent verification difficult
-
-**Inconsistencies Noted:**
-No direct contradiction between user account and AI assessment; however, causation between fall and software malfunction remains unestablished.
-
-**Recommendation:**
-**Manual review not warranted.** Decline decision appropriate under ADLD terms. Software issues require manufacturer warranty claim, not accidental damage coverage. Advise claimant to contact WUAWEI support or escalate only if physical damage evidence (photos/repair reports) emerges."
-471,Approved,Completed,0.998,Accidental Damage,screen_crack,"# Your Claim Decision
-
-Good news! **Your claim has been approved.** ✓
-
-**What happened:**
-Your WUAWEI smartphone suffered screen damage while at work in the metal factory when your phone was compressed in your pocket. We understand this was an accident, and we're here to help.
-
-**Why we approved your claim:**
-Your Accidental Damage and Loss (ADLD) coverage applies to this situation. Several factors supported approval:
-- Your policy has been active for an appropriate duration
-- Accidental damage from crushing/compression is covered under your plan
-- Your claim details and policy timing all align with our coverage terms
-
-**What happens next:**
-1. We'll process your claim and contact you within 2-3 business days with repair or replacement options
-2. You'll receive information about authorized repair centers or replacement procedures
-3. Keep any receipts or documentation you have about the incident
-
-**Questions?**
-If you'd like to discuss repair options or have any questions, please don't hesitate to reach out. We're here to make this as smooth as possible.
-
-Thank you for choosing us, and we're glad we could help!","**CLAIMS ADJUSTER NOTE**
-
-**CLAIM DECISION: APPROVED**
-- Confidence Level: 99.8% (threshold: 40.0%)
-- Device: WUAWEI AAA123 | RRP: €18,407 | Excess: €589
-- Coverage: ADLD (Accidental Damage) | Policy Status: Active
-
-**SUPPORTING EVIDENCE**
-- Damage profile consistent with coverage: moderate screen crack from crush incident (workplace pressure injury)
-- Policy duration (181 days) strongly supports approval (+1.247 SHAP weight)
-- Incident type classification aligns with accidental damage criteria
-- User accountability acknowledged; no fraudulent indicators detected
-- Matter-of-fact tone suggests straightforward claim narrative
-
-**RISK FACTORS & INCONSISTENCIES**
-- **Description quality concerns**: Vague incident clarity with apparent character encoding errors in original submission (Swedish text partially corrupted). Word count (30 words) and sentence structure (2 sentences) below typical threshold, suggesting incomplete narrative.
-- **High-value device**: RRP of €18,407 represents elevated financial exposure; crush damage in metal fabrication environment warrants verification of workplace conditions.
-- **Text encoding issues**: Garbled description limits confidence in claim authenticity verification and may indicate submission system error rather than fraud.
-
-**RECOMMENDATION**
-**Approve with manual verification flag.** While ML confidence is exceptionally high, the corrupted description quality and elevated claim value warrant:
-1. Contact claimant to obtain legible incident description and workplace context
-2. Photograph verification of damage extent
-3. Confirm device was within policy coverage period at loss date
-
-**Manual review estimated duration**: Low-priority, documentation verification only."
-2644,Approved,Completed,0.993,Accidental Damage,multiple_damage,"# Your Claim Decision
-
-**Good news! Your claim has been approved.** ✓
-
-We understand how frustrating it must be to have your phone slip out of your hands while taking a photo. We're glad we can help.
-
-**Here's why we approved your claim:**
-
-Your accidental damage claim falls squarely within your ADLD/THEFT coverage. The incident you described—the device dropping and causing screen damage plus display issues—is exactly what this coverage is designed for. You provided clear, detailed information about what happened, which helped us process your claim quickly and confidently.
-
-**What happens next:**
-
-A member of our claims team will contact you within 1-2 business days to discuss your options. Depending on your policy and the damage assessment, you may be eligible for a repair or replacement of your WUAWEI device.
-
-Please keep your phone safe until we reach out, and have your claim reference number handy when we call.
-
-We truly appreciate your patience, and we're here to make this process as smooth as possible.
-
-**Questions?** Feel free to reply or call us anytime.","**CLAIMS ADJUSTER TECHNICAL NOTE**
-
-**CLAIM DECISION: APPROVED**
-- ML Model Confidence: 99.3% (threshold: 40.0%)
-- Device: WUAWEI WUAWEI-AAA111 | RRP: €1,579.00 | Excess: €59.00
-- Coverage: ADLD/THEFT | Policy Status: Active
-
----
-
-**SUPPORTING EVIDENCE**
-
-• **Incident Type Validation** (+0.69 SHAP): Drop incident clearly identified with detailed, coherent narrative
-• **Claim Authenticity** (+0.59 SHAP): No PII redaction detected; straightforward, matter-of-fact tone suggests genuine claim
-• **Description Quality** (+0.39 SHAP): 44-word account provides sufficient specificity regarding damage mechanism and location
-• **Coverage Alignment**: Accidental damage claim falls squarely within ADLD/THEFT policy terms
-• **Device Functionality**: Partial functionality maintained (optical damage present, display degradation noted)
-
----
-
-**RISK FACTORS & INCONSISTENCIES**
-
-• **Multiple Damage Types**: Screen crack + display discoloration (""green fog"") suggests potential underlying hardware damage beyond impact—warrants verification that secondary display defect is causally linked to drop incident
-• **Touchscreen Device** (-0.27 SHAP): Higher repair/replacement cost exposure; combined with moderate severity rating, repair estimate critical
-• **Low Excess-to-RRP Ratio** (-0.27 SHAP): €59 excess represents only 3.74% of device value; minor downward influence on approval
-• **Policy Tenure**: Claimed 7 months into policy; no red flags but within typical fraud risk window
-
----
-
-**RECOMMENDATIONS**
-
-**Manual Review Required**: Obtain repair estimate to confirm whether display discoloration is primary impact-related damage or secondary manufacturing defect. If secondary defect unrelated to drop, liability may be disputed.
-
-**Approval Status**: Conditionally approved pending damage verification. Proceed with authorized repair quote submission."
-1328,Approved,Completed,0.991,Theft,theft,"# Your Claim Decision
-
-Dear Valued Customer,
-
-Thank you for filing your claim, and I'm sorry to hear about your experience. **Your claim for theft has been APPROVED.**
-
-We understand how stressful it must have been to have your phone and bankcard stolen during your commute. We've carefully reviewed your claim and the circumstances you described, and we're satisfied that this was a legitimate theft incident covered under your ADLD/THEFT policy.
-
-**What happens next:**
-
-We'll process your claim and arrange compensation for your HUAWEI device. You should expect to hear from our claims team within 2-3 business days with details about payment and next steps.
-
-In the meantime, if you haven't already done so, we recommend:
-- Contacting your bank to block your card
-- Reporting the device as stolen (for any find-my-device tracking)
-
-We're here to help make this process as smooth as possible. If you have any questions or need further assistance, please don't hesitate to reach out.
-
-Thank you for your patience and for being a customer with us.
-
-Best regards,  
-**Customer Support Team**","**CLAIMS ADJUSTER NOTE**
-
-**Claim ID:** WUAWEI-AAA20 | **Decision:** APPROVED | **Confidence:** 99.1%
-
----
-
-**PREDICTION SUMMARY**
-ML model recommends approval with high confidence (0.991 vs. 0.40 threshold). Device theft claim meets policy coverage criteria under ADLD/THEFT with active policy status.
-
-**SUPPORTING EVIDENCE**
-- **Coverage alignment:** Theft claim properly classified under eligible coverage type
-- **Device value:** RRP €1,349 with €99 excess within standard parameters
-- **No prior claims:** device_issues_count = 0 indicates clean claims history
-- **Claim clarity:** Moderate clarity with specific incident details (location, method, timing)
-- **Damage severity:** Assessed as severe, consistent with device loss
-- **Policy tenure:** Active coverage from month 5 enrollment reduces early-claim fraud risk
-
-**RISK FACTORS & INCONSISTENCIES**
-- **Conflicting SHAP signal:** llm_incident_type (SHAP -1.2623) is the strongest decline factor, contradicting overall approval recommendation—requires clarification on incident classification methodology
-- **Redacted details:** Significant information redaction in claim narrative limits independent verification of circumstances (location names, dates obscured)
-- **Moderate clarity rating:** Narrative contains typical elements but lacks specifics (exact date/time, police report reference, recovery attempts)
-- **Low product frequency:** productCode value (0.0205) indicates infrequent device model claims—may reflect insufficient historical data for reliable comparison
-
-**RECOMMENDATION**
-**Manual review recommended before final approval.** While model confidence is high, the strong negative incident_type signal warrants investigation. Request:
-1. Unredacted incident details and specific date/time
-2. Police report or theft documentation
-3. Clarification on SHAP incident_type coding discrepancy
-
-**Decision:** Hold pending manual adjuster review."
-1617,Declined,Declined,0.397,Accidental Damage,screen_crack,"Dear Valued Customer,
-
-Thank you for filing your claim with us. I'm writing to let you know that unfortunately, **we've declined your claim** for damage to your WUAWEI WUAWEI-AAA119 smartphone.
-
-**What happened:**
-We received your report that your device fell from your hand onto a gravel path, resulting in cracks on the left and right sides of the screen. While accidental drops are typically covered under your ADLD policy, our review found some concerns with how the claim was documented.
-
-**Why we declined:**
-The information provided didn't give us enough clarity to confidently process your claim. Specifically, some details about the incident and your device needed to be clearer or more complete for us to verify coverage.
-
-**What you can do:**
-I'd encourage you to **submit an appeal**. When you do, please include:
-- Clear photos of the damage
-- Any receipt or proof of purchase
-- A detailed description of exactly what happened and when
-
-We genuinely want to help if we can. Providing additional details will give us a better picture and help us make a fair decision.
-
-Please reply to this message or contact us directly if you'd like to proceed with an appeal. We're here to help.
+If you believe this decision is incorrect, you have the right to appeal. Please contact us with:
+- Any additional evidence (police report, witness statements, CCTV footage from the venue)
+- More details about exactly when and where the phone was last seen
+- Any other information supporting that theft occurred
+
+We're here to help. Feel free to reach out if you'd like to discuss this further or need clarification.
 
 Best regards,
-Customer Support Team","**CLAIMS ADJUSTER NOTE**
+Customer Service Team","# CLAIMS ADJUSTER NOTE
+**Claim ID:** WUAWEI-AAA54 | **Decision:** DECLINED | **Confidence:** 0.6% (Very Low)
 
-**Claim ID:** WUAWEI-AAA119 | **Decision:** DECLINED | **Confidence:** 39.7% (Marginal)
+---
+
+## PREDICTION SUMMARY
+ML model recommends **DECLINE** with extremely low approval probability (0.006 vs. 0.40 threshold). However, confidence level is critically low, indicating high uncertainty in this assessment.
+
+---
+
+## KEY EVIDENCE SUPPORTING DECLINE
+
+- **Excess-to-RRP Ratio Anomaly:** Excess (€1,989) significantly exceeds RRP (€1,079)—ratio of 1.84:1. This is atypical and represents the strongest decline signal (SHAP: -1.10).
+- **Vague Loss Description:** Claim narrative (31 words) lacks specificity regarding theft location (pub vs. bus) and timeline, preventing clear loss verification.
+- **Low Retailer Frequency:** Retailer appears in only 15% of comparable claims, reducing pattern matching reliability.
+
+---
+
+## CONTRADICTING FACTORS & RED FLAGS
+
+- **Coverage Match:** Active ADLD/THEFT policy explicitly covers theft claims in SE (coverage_encoded correctly mapped).
+- **Damage Assessment:** AI correctly identified theft as damage type with severe severity—consistent with legitimate claim category.
+- **No Fraud Indicators:** Device is non-functional; user shows no fault; matter-of-fact tone suggests no emotional manipulation.
+- **Critical Issue:** The excess amount appears to be a data entry error or policy configuration problem. Excess should not exceed device RRP.
+
+---
+
+## RECOMMENDATION: MANUAL REVIEW REQUIRED
+
+**This case warrants immediate adjuster intervention:**
+1. Verify excess amount against policy documentation (€1,989 vs. €1,079 RRP is illogical)
+2. Request claimant clarification on theft location and timeline
+3. Conduct standard theft verification (police report, retailer confirmation)
+
+The ML decline is likely driven by data integrity issues rather than claim merit. **Do not issue final decline pending excess verification.**"
+2270,Declined,Declined,0.004,Accidental Damage,software_issue,"# Your Claim Decision
+
+Dear Valued Customer,
+
+Thank you for filing a claim with us. We've carefully reviewed your case regarding the WUAWEI WUAWEI-AAA320, and unfortunately, we must **decline your claim at this time**.
+
+## Why We Declined
+
+Based on our assessment, we have some concerns:
+
+1. **Unclear incident details** – The description of how the damage occurred isn't entirely clear to us, which makes it difficult to confirm this is covered under accidental damage.
+
+2. **Software vs. hardware** – Our assessment suggests this may be a software issue rather than accidental physical damage, which falls outside your ADLD coverage.
+
+## What You Can Do
+
+We understand this is frustrating. Here are your options:
+
+- **Provide more information** – If you can give us clearer details about what happened (including photos or videos), we'd be happy to re-review your claim
+- **File an appeal** – You have the right to formally appeal this decision within 30 days
+- **Contact us directly** – Our claims team can discuss whether other coverage options might apply
+
+We're here to help. Please reach out if you'd like to discuss this further or provide additional details.
+
+Best regards,
+Your Insurance Team","**CLAIMS ADJUSTER NOTE**
+
+**Claim ID:** WUAWEI-AAA320 | **Decision:** DECLINED | **Confidence:** Very Low (0.4%)
 
 ---
 
 **PREDICTION SUMMARY**
-ML model returned decline decision with approval probability of 0.397, marginally below threshold (0.400). This represents low confidence in the automated decision and warrants careful review.
+ML model recommends decline with extremely low approval probability (0.004 vs. 0.40 threshold). This marginal confidence level warrants caution in reliance on automated decision alone.
 
 ---
 
 **SUPPORTING EVIDENCE FOR DECLINE**
-- **Model frequency:** Unusually low historical approval rate (4.5%) for comparable claims—suggests systematic decline pattern for this device model
-- **Product code frequency:** Low approval rate (9.7%) for this product category indicates elevated risk profile
-- **Claim description characteristics:** Minimal uppercase usage, brief narrative (29 words, 170 characters), and low linguistic complexity flagged as decline indicators
+- **Damage Classification:** Software issue (moderate severity) typically falls outside accidental damage scope; ADLD policies typically exclude software faults
+- **Incident Clarity:** Description is vague and heavily redacted, with unclear causation (""unknown_cause"" flagged)
+- **User Attribution:** AI assessment indicates ""User at fault: True,"" suggesting non-accidental origin
+- **Linguistic Indicators:** Low uppercase ratio and vague phrasing suggest lower claim legitimacy confidence
 
 ---
 
-**MITIGATING FACTORS**
-- **Clear incident documentation:** Claimant provided detailed drop incident with specific damage location (bilateral screen cracks on left and right upper corners)
-- **Covered peril:** Accidental damage claim aligns with ADLD coverage terms; drop damage to screens is standard covered loss
-- **Policy status:** Active coverage confirmed
-- **Liability assessment:** User-at-fault classification is consistent with accidental damage definition
-- **Device functionality:** Partial functionality retained despite moderate-severity screen damage
-
----
-
-**RISK FLAGS & INCONSISTENCIES**
-- **Marginal threshold breach:** 39.7% vs 40% threshold suggests model uncertainty
-- **Potential linguistic bias:** Low word count and description length may penalize legitimate claims with concise narratives
-- **Language consideration:** Claim submitted in Dutch; brief description may reflect translation/language limitations rather than claim validity
+**CONTRADICTING FACTORS & RISK ALERTS**
+- **Critical Redaction Issues:** Significant text masking (*****) obscures actual incident details—prevents proper assessment of whether damage was truly accidental vs. device malfunction
+- **Policy Validity:** Active policy with 366-day tenure and appropriate excess (€45 against €499 RRP) are in order
+- **Ambiguous Causation:** ""Telefoon lag op kast"" (phone on cabinet) *could* indicate accidental fall, but description is too obscured to confirm
+- **Model Confidence Crisis:** 0.4% approval probability is near-zero; this extreme reading suggests model uncertainty rather than clear decline evidence
 
 ---
 
 **RECOMMENDATION**
-**Manual review warranted.** Decision falls within borderline range with conflicting indicators. Recommend approval consideration given valid coverage, clear incident documentation, and legitimate damage profile. Assess whether claim description brevity reflects cultural/linguistic factors rather than claim fraud indicators."
-1710,Declined,Declined,0.388,Accidental Damage,screen_crack,"# Claim Decision Letter
+**ESCALATE FOR MANUAL REVIEW.** The extreme low confidence combined with heavily redacted claim description makes automated decline inappropriate. Adjuster should:
+1. Request unredacted claim description from claimant
+2. Clarify incident mechanism (accidental drop vs. software malfunction)
+3. Verify whether device damage is physical or software-only
+4. Re-assess under proper incident clarity before final decision"
+471,Approved,Completed,1.0,Accidental Damage,screen_crack,"# Your Claim Decision: **APPROVED** ✓
 
 Dear Valued Customer,
 
-Thank you for submitting your claim for your WUAWEI WUAWEI-AAA119 smartphone. We understand how frustrating it is when your device is damaged, and we appreciate you providing details about the incident.
+Thank you for filing your claim with us. I'm pleased to let you know that your claim for accidental damage to your HUAWEI smartphone has been **approved**.
 
-**We regret to inform you that your claim for accidental damage has been declined.**
+**What happened:**
+We reviewed your claim for the cracked screen that occurred when your phone was in your pocket at work. This type of accidental damage is covered under your ADLD policy, and your claim meets all the necessary requirements for approval.
 
-After careful review of your claim, we had some concerns that prevented us from approving coverage at this time. While we can see your phone experienced a cracked screen from a fall onto a table—which would normally be covered under accidental damage—we weren't able to fully verify all the details needed to process the claim with confidence.
+**What happens next:**
+You should expect to hear from our claims team within the next 2-3 business days with details about:
+- Repair or replacement options available to you
+- Any applicable excess/deductible
+- How to proceed with getting your device fixed
 
-**What you can do:**
+We understand how frustrating it is when your device gets damaged, especially during your workday. We're here to make this process as smooth as possible for you.
 
-We'd like to help if possible. You have the option to:
-- **Appeal this decision** by providing additional information or photos of the damage
-- **Contact us directly** to discuss the claim further—there may be clarification that helps us reconsider
-
-Please reply within 30 days if you'd like to proceed with an appeal. Our team is here to support you through this process.
-
-We appreciate your patience and understanding.
+If you have any questions in the meantime, please don't hesitate to reach out. We're happy to help!
 
 Best regards,  
-**Customer Service Team**","**CLAIMS ADJUSTER NOTE**
+**Customer Service Team**","# CLAIMS ADJUSTER NOTE
 
-**CLAIM DECISION SUMMARY**
-ML model declined claim with marginal confidence (38.8% approval probability vs. 40% threshold). Decision is borderline and warrants careful manual review given the narrow margin of error.
+**Claim ID:** WUAWEI-AAA123 | **Decision:** APPROVED | **Confidence:** 100%
 
-**SUPPORTING EVIDENCE FOR DECLINE**
-- **Low product frequency signal**: WUAWEI-AAA119 appears rarely in approval dataset (productCode_freq: 0.097), suggesting historical claim patterns unfavorable for this model
-- **Damage consistency**: AI assessment confirms accidental drop with moderate-severity screen crack—clear coverage trigger under ADLD policy
-- **Claim narrative**: Single-sentence description (28 words) with minimal detail/capitalization; linguistic markers weakly correlate with declined claims historically
+---
 
-**CONTRADICTING EVIDENCE / RISK FACTORS**
-- **Policy active & valid**: Coverage type (ADLD) explicitly covers accidental damage; policy duration (365 days) supports claim legitimacy
-- **Within excess threshold**: RRP £1,579 with £59 excess is reasonable and within normal parameters
-- **User accountability acknowledged**: Claimant's matter-of-fact tone and admission of fault (""he fell on the edge"") demonstrates transparency
-- **Narrow decision margin**: 38.8% vs. 40% threshold suggests model uncertainty; small shifts in feature weighting reverse the decision
+## PREDICTION SUMMARY
+ML model recommends approval with maximum confidence (1.0 probability vs. 0.40 threshold). Device valued at €18,407 with €589 excess. Accidental damage claim under active ADLD coverage in Sweden.
 
-**CRITICAL INCONSISTENCY**
-The SHAP analysis shows policy_duration_days and RRP pushing toward decline despite being standard policy parameters. This suggests potential model overfitting to historical claim patterns rather than claim-specific risk factors.
+---
+
+## SUPPORTING EVIDENCE
+- **Policy Status:** Active, 181 days in force (low lapse risk)
+- **Damage Assessment:** Screen crack, moderate severity, crush incident
+- **User Accountability:** Acknowledged fault (occupational hazard—metal fabrication environment)
+- **Device Functionality:** Partial—operational but compromised
+- **Tone Analysis:** Matter-of-fact, credible presentation
+- **Key Approval Drivers:** Policy duration (+2.11 SHAP), high RRP (+0.71 SHAP), incident classification (+0.93 SHAP)
+
+---
+
+## RISK FACTORS & INCONSISTENCIES
+- **Critical:** Description contains character encoding corruption (Ã¤, *** masking) indicating potential OCR/transcription error. Readability severely compromised.
+- **Vague Incident Clarity:** Claim narrative lacks specific temporal/spatial detail. Mechanism unclear (""*** fick tryck på""—incomplete text).
+- **Occupational Context:** Metal fabrication environment increases crush risk plausibility but warrants verification of workplace conditions.
+- **Conflicting Signals:** Moderate damage severity penalizes decision (-0.38 SHAP) yet approval holds; low word count (-0.69 SHAP) suggests incomplete description.
+
+---
+
+## RECOMMENDATION
+**MANUAL REVIEW REQUIRED** before final settlement. Despite strong model confidence, the corrupted claim description undermines proper verification. Recommend:
+1. Request legible written statement from claimant
+2. Obtain photographic evidence of damage
+3. Verify occupational crush mechanism plausibility
+4. Confirm policy coverage terms for workplace-related incidents
+
+**Proceed cautiously.** High RRP increases loss exposure; documentation gaps must be resolved."
+2644,Approved,Completed,1.0,Accidental Damage,multiple_damage,"# Your Claim Decision: Approved ✓
+
+Thank you for filing your claim with us. I'm pleased to let you know that **your claim has been approved**, and we're ready to help you get your device repaired or replaced.
+
+## What Happened
+We reviewed your report about dropping your WUAWEI WUAWEI-AAA111 while taking a photograph. The resulting screen crack and display issues are clearly covered under your Accidental Damage and Theft policy. These types of incidents—accidental drops causing multiple damage points—are exactly what your coverage is designed for.
+
+## What's Next
+A claims specialist will contact you within 1-2 business days with your next steps. Depending on your policy terms, you'll have options for repair or replacement.
+
+## Questions?
+If you have any questions in the meantime, please don't hesitate to reach out. We understand how frustrating device damage can be, and we're here to make this process as smooth as possible.
+
+We appreciate your business and your patience while we reviewed your claim.","**CLAIMS ADJUSTER NOTE**
+
+**Claim Decision: APPROVED**
+ML Model Confidence: 100% (Threshold: 40%)
+
+---
+
+**SUPPORTING EVIDENCE**
+
+• **Valid Coverage**: ADLD/THEFT policy active in NL; accidental damage claim type aligns with policy scope
+• **Clear Incident Narrative**: 44-word description provides detailed account of drop incident during photography use
+• **Credible Damage Profile**: Screen crack (right side, volume/power buttons) consistent with physical drop mechanism
+• **User Accountability**: AI assessment confirms user at fault; no gradual wear detected
+• **Device Value**: RRP €1,579 with €59 excess; claim economically justified
+• **Functional Device**: Partial functionality retained (device operational despite display defects)
+
+---
+
+**RISK FACTORS & INCONSISTENCIES**
+
+• **Secondary Damage Concern**: ""Green fog"" on dark color display suggests potential liquid damage or display panel degradation beyond mechanical impact alone—warrants verification
+• **Multiple Damage Issues**: AI flagged 3 device issues; unclear if all stem from single drop incident or pre-existing conditions
+• **Touchscreen Involvement**: Touchscreen functionality impact noted; requires confirmation that screen replacement/repair will resolve all reported issues
+• **Model Frequency**: Device model appears in low claim frequency cohort (0.0128), limiting historical damage pattern comparison
+
+---
 
 **RECOMMENDATION**
-**Manual review required.** The marginal confidence level combined with straightforward damage type (screen crack from drop) and valid ADLD coverage suggests this claim merits human adjudication. Consider approval subject to photographic damage verification and standard excess deduction (£59)."
+
+**APPROVE with CONDITIONS:**
+- Require photographic evidence of damage before settlement
+- Request repair quote specifying all damage components (digitizer, LCD panel, green discoloration cause)
+- Confirm no liquid damage indicators present
+- Verify all secondary issues resolve with screen replacement
+
+**Manual Review Not Required**: Claim profile aligns with policy terms despite secondary defect ambiguity. Photographic evidence protocols sufficient for risk mitigation."
+1328,Approved,Completed,1.0,Theft,theft,"# Your Claim Decision: **APPROVED** ✓
+
+Dear Valued Customer,
+
+Thank you for filing your claim, and we're sorry to hear about this theft during your commute. We understand how frustrating and stressful this situation must be.
+
+**Good news:** We've approved your claim for your WUAWEI smartphone that was stolen.
+
+**Why we approved it:**
+- Your claim type (theft) is covered under your ADLD/THEFT policy
+- The incident itself is clearly documented and understood
+- Your device's value compared to the excess makes this a reasonable claim
+- You've provided clear details about what happened
+
+**What happens next:**
+- We'll process your claim and contact you within the next 2-3 business days with payment details or replacement options
+- Keep any documentation (police report, photos, receipts) handy in case we need them
+- You may have an excess to pay, depending on your policy terms
+
+We appreciate your patience during this process, and we're here to help if you have any questions.
+
+Best regards,
+**Customer Support Team**","# CLAIMS ADJUSTER NOTE
+
+**CLAIM DECISION: APPROVED**
+- ML Confidence: 100% (Threshold: 40%)
+- Device: WUAWEI WUAWEI-AAA20 | RRP: €1,349 | Excess: €99
+
+---
+
+## SUPPORTING EVIDENCE
+
+• **Valid Coverage**: ADLD/THEFT policy active; theft claims encoded favorably (+0.61 SHAP)
+• **Low Excess Ratio**: 7.3% excess-to-RRP ratio supports approval (+0.65 SHAP)
+• **Clear Incident Type**: Theft classification confirmed; moderate clarity in claimant narrative (+0.61 SHAP)
+• **No Prior Claims**: Zero device_issues_count history strengthens credibility (+0.96 SHAP)
+• **Policy Tenure**: 5-month policy start indicates early-stage claim (+0.52 SHAP)
+• **User Fault Assessment**: No evidence of claimant negligence; public transport theft presents inherent risk
+
+---
+
+## RISK FACTORS & INCONSISTENCIES
+
+• **Moderate Narrative Clarity**: Description contains multiple redactions limiting full context assessment (-1.78 SHAP penalty on incident_type encoding)
+• **Coverage Encoding Anomaly**: Negative SHAP contribution (-0.44) on coverage_encoded warrants review—possible coverage limitation flagged by system
+• **High-Value Device**: €1,349 RRP theft via pickpocketing presents elevated fraud risk profile requiring manual verification
+
+---
+
+## RECOMMENDATION
+
+**Manual review advised** despite high ML confidence. Specific actions:
+1. Verify police report filed for theft (standard requirement)
+2. Confirm claimant banking incident filed separately (bankpas stolen)
+3. Clarify coverage_encoded discrepancy—assess policy exclusions
+4. Validate device IMEI/serial not previously claimed
+
+**Decision Status**: CONDITIONAL APPROVAL pending manual verification of above items."
+2407,Approved,Completed,0.682,Accidental Damage,screen_crack,"# Your Claim Decision
+
+Good news! Your accidental damage claim has been **approved** ✓
+
+**What happened:**
+We reviewed your claim for the HUAWEI smartphone that was damaged when it fell onto the coffee table while you were sitting on the sofa. Based on your description and our assessment, this is consistent with accidental damage coverage under your ADLD policy.
+
+**What we found:**
+The damage to your screen (cracking and the line running across it) matches what we'd expect from this type of drop incident and falls within your coverage.
+
+**What happens next:**
+- We'll be in touch within 2-3 business days with next steps
+- This will include repair or replacement options, depending on your policy terms
+- Any applicable excess will be deducted from the settlement
+
+**Important reminder:**
+Please don't attempt any repairs yourself before hearing from us, as this could affect your claim.
+
+If you have any questions in the meantime, please don't hesitate to reach out. We're here to help.
+
+Thank you for choosing us, and we're sorry your phone was damaged!","# CLAIMS ADJUSTER NOTE
+
+**CLAIM DECISION: APPROVED**
+- Approval Probability: 68.2% | Decision Threshold: 40.0%
+- Confidence Level: Moderate (above threshold but not high-confidence)
+
+---
+
+## SUPPORTING EVIDENCE
+- **Damage Type**: Screen crack with moderate severity—consistent with covered accidental damage under ADLD
+- **Incident Narrative**: Detailed description of drop incident (device fell from sofa onto table edge) indicates genuine accident
+- **Coverage Status**: Policy in grace period; ADLD coverage explicitly applies to accidental damage
+- **Risk Profile**: Device functionality partial but repairable; claim value (RRP €1,579) proportionate to excess (€59 = 3.7% ratio)
+
+---
+
+## RISK FACTORS & CONCERNS
+- **Policy Tenure**: Grace period status suggests recent policy inception—elevated risk profile for early-stage claims
+- **Model Frequency**: Low product code frequency (9.7%) and model frequency (5.1%)—potentially indicates infrequent claim patterns or data sparsity
+- **Language Indicators**: Description contains minimal capitalization (0.8%) and moderate length (243 characters), showing casual documentation but no fraud signals
+- **Model Uncertainty**: Multiple minor adverse SHAP factors (desc_length, uppercase_ratio, product frequency) offset by approval channel factor
+
+---
+
+## RECOMMENDATION
+**Approve as adjudicated**, with the following caveats:
+- **Manual Review Warranted**: Request photographic damage verification before payment processing due to moderate confidence level and grace period status
+- **Verification Check**: Confirm incident date aligns with policy effective date to ensure coverage was active
+- **Processing Note**: Standard excess (€59) applies to settlement calculation
+
+---
+
+**Adjuster Action**: Route to damage assessment queue for visual confirmation prior to settlement authorization."
+2408,Approved,Declined,0.682,Accidental Damage,screen_crack,"# Claim Decision: APPROVED ✓
+
+Dear Valued Customer,
+
+Thank you for filing your claim. We're pleased to inform you that your claim for accidental damage to your WUAWEI smartphone has been **approved**.
+
+**What happened:**
+We understand your phone fell onto your foot while you were sitting on the sofa, resulting in a cracked screen. This type of accidental damage is covered under your ADLD (Accidental Loss & Liquid Damage) policy.
+
+**What happens next:**
+We'll be in touch shortly with next steps, which typically include:
+- Repair or replacement options
+- Instructions on how to send in your device (if needed)
+- Details about any applicable excess charges
+
+We know how frustrating it is when your phone gets damaged unexpectedly, so we're here to get this sorted quickly for you.
+
+**Have questions?**
+If you need any clarification or have concerns, please don't hesitate to reach out. We're here to help.
+
+Thank you for your patience and for being a valued customer.
+
+Best regards,
+Customer Service Team","# CLAIMS ADJUSTER NOTE
+
+**Claim ID:** WUAWEI-AAA104 | **Decision:** APPROVED | **Confidence:** 68.2%
+
+---
+
+## PREDICTION SUMMARY
+ML model approved claim with moderate confidence (0.682 vs. 0.40 threshold). Decision margin is narrow, indicating borderline case requiring adjuster scrutiny.
+
+---
+
+## SUPPORTING EVIDENCE
+- **Valid coverage:** Accidental Damage with ADLD applies to drop incidents
+- **Damage consistency:** Screen crack/streaking aligns with low-impact fall narrative
+- **Claim legitimacy:** Detailed incident description (243 characters) with clear causation (phone dropped on foot near table)
+- **Financial threshold:** Excess (€59) represents 3.74% of RRP (€1,579)—reasonable proportion
+- **Channel factor:** Submission method flagged positively (+1.34 SHAP weight)
+
+---
+
+## RISK FACTORS & CONTRADICTIONS
+- **Policy status concern:** Claim submitted during Grace Period—verify coverage activation date and no exclusion clause violation
+- **Model frequency red flags:** Device (0.097 frequency) and model type (0.051 frequency) show low historical claim incidence; potential unvalidated claims pattern
+- **Description length paradox:** Shorter descriptions typically correlate with approval, yet this 243-character account scored negatively (-1.85 SHAP), suggesting model detected atypical narrative markers
+- **Emotional tone:** ""Frustrated"" language and redacted content (****) may indicate incomplete claim form or information suppression
+
+---
+
+## RECOMMENDATION
+**Manual review warranted** before final approval:
+1. Confirm policy effective date against claim submission—Grace Period status requires verification
+2. Request unredacted incident description and photographic damage evidence
+3. Validate device authenticity (unusual model designation ""WUAWEI-AAA104"")
+4. Cross-reference device frequency data against fraud patterns
+
+**Approve conditionally pending documentation verification.**"
