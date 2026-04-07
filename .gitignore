@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+bert_tmp/
+bert_tmp_hybrid/
+*.output
+*_executed.ipynb
+docs/

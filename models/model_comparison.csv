@@ -1,0 +1,5 @@
+Model,F1 Macro (mean),F1 Macro (std),F1 Declined (mean),PR-AUC (mean),ROC-AUC (mean)
+Logistic Regression,0.5188,0.0191,0.3033,0.8942,0.6241
+LightGBM (Default),0.5657,0.0304,0.28,0.8837,0.6216
+LightGBM (Tuned),0.5526,0.052,0.2102,0.8811,0.6113
+XGBoost,0.5531,0.0201,0.2053,0.8896,0.6265

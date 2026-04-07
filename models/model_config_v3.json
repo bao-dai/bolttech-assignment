@@ -1,0 +1,72 @@
+{
+  "best_v3_model": "BERT hybrid",
+  "optimal_threshold": 0.7199999999999996,
+  "bert_model": "distilbert-base-multilingual-cased",
+  "bert_epochs": 3,
+  "bert_lr": 2e-05,
+  "bert_max_len": 128,
+  "tfidf_svd_components": 80,
+  "lstm_max_vocab": 8000,
+  "lstm_max_len": 128,
+  "structural_features": [
+    "excessFee",
+    "rrp",
+    "excess_to_rrp_ratio",
+    "device_condition_score",
+    "device_issues_count",
+    "device_not_assessed_count",
+    "turnOnOff",
+    "touchScreen",
+    "frontCamera",
+    "backCamera",
+    "audio",
+    "mic",
+    "desc_length",
+    "desc_word_count",
+    "desc_sentence_count",
+    "desc_has_newlines",
+    "desc_uppercase_ratio",
+    "desc_exclamation_count",
+    "desc_question_count",
+    "has_redacted_pii",
+    "policy_duration_days",
+    "purchase_to_policy_days",
+    "is_policy_active",
+    "policy_start_month",
+    "policy_start_dayofweek",
+    "coverage_encoded",
+    "claimType_encoded",
+    "country_encoded",
+    "channel_encoded",
+    "deviceType_encoded",
+    "productCode_freq",
+    "retailerName_freq",
+    "model_freq"
+  ],
+  "v3_results": {
+    "v3: TF-IDF + SVD + LGB": {
+      "f1_macro": 0.5917557338474186,
+      "f1_declined": 0.2857142857142857,
+      "pr_auc": 0.8978920065376255,
+      "roc_auc": 0.6717215541493736
+    },
+    "v3: BiLSTM (text only)": {
+      "f1_macro": 0.5516594926159404,
+      "f1_declined": 0.26817752596789424,
+      "pr_auc": 0.8739177890277426,
+      "roc_auc": 0.5991876707133054
+    },
+    "v3: BERT fine-tuned (text)": {
+      "f1_macro": 0.6025807102619773,
+      "f1_declined": 0.3642671292281006,
+      "pr_auc": 0.9038904036292454,
+      "roc_auc": 0.6704035996801982
+    },
+    "v3: BERT hybrid + LGB": {
+      "f1_macro": 0.6080956991079108,
+      "f1_declined": 0.32124352331606215,
+      "pr_auc": 0.8967132190755233,
+      "roc_auc": 0.6658194102221968
+    }
+  }
+}
